@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { About, Contact, Skills, TabView } from "./components";
+import Projects from "./components/projects";
+import useWindowSize from "./hooks/useWindowSize";
 
 function App() {
+  const size = useWindowSize()
+  const tabs = [
+    {
+      id: 0,
+      name: "Skills",
+      component: <Skills />
+    },
+    {
+      id: 1,
+      name: "Projects",
+      component: <Projects />
+    },
+    {
+      id: 2,
+      name: "Contact",
+      component: <Contact />
+    }
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <About />
+      <Skills />
+      <p>{size[0]} : {size[1]}</p>
+      <TabView tabs={tabs}>
+        <TabView.Tabs>
+          {tabs.map(elm => <TabView.Tab key={elm.id} id={elm.id} />)}
+        </TabView.Tabs>
+        <TabView.Frame>
+          <TabView.Body />
+        </TabView.Frame>
+      </TabView>
     </div>
   );
 }
