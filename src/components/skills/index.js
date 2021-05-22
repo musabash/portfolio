@@ -6,12 +6,13 @@ export default function Skills() {
 
   return (
     <div className='tab-content'>
-      <FaJsSquare className="blue" />
-      <FaReact className="blue" />
-      <FaCss3Alt className="blue" />
-      <FaGit className="blue" />
-      <FaGitAlt className="blue" />
-      <SiFirebase className="blue" />
+      <FaJsSquare className="fav-icons" style={{color:"#f1ce06"}}/>
+      <FaReact className="fav-icons" style={{color:"#18dbf5"}}/>
+      <FaCss3Alt className="fav-icons" style={{color:"#2277ff"}}/>
+      <FaHtml5 className="fav-icons" style={{color:"#f68646"}}/>
+      <FaGit className="fav-icons" style={{color:"#f6865f"}}/>
+      <FaGitAlt className="fav-icons" style={{color:"#fff"}}/>
+      <SiFirebase className="fav-icons" style={{color:"#f1aa37"}}/>
     </div>
   )
 }

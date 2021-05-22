@@ -1,9 +1,7 @@
 import { About, Contact, Skills, TabView } from "./components";
 import Projects from "./components/projects";
-import useWindowSize from "./hooks/useWindowSize";
 
 function App() {
-  const size = useWindowSize()
   const tabs = [
     {
       id: 0,
@@ -22,18 +20,18 @@ function App() {
     }
   ]
   return (
-    <div className="App">
-      <About />
-      <Skills />
-      <p>{size[0]} : {size[1]}</p>
-      <TabView tabs={tabs}>
-        <TabView.Tabs>
-          {tabs.map(elm => <TabView.Tab key={elm.id} id={elm.id} />)}
-        </TabView.Tabs>
-        <TabView.Frame>
-          <TabView.Body />
-        </TabView.Frame>
-      </TabView>
+    <div className="app">
+      <div className="app-container">
+        <About />
+        <TabView tabs={tabs}>
+          <TabView.Tabs>
+            {tabs.map(elm => <TabView.Tab key={elm.id} id={elm.id} name={elm.name}/>)}
+          </TabView.Tabs>
+          <TabView.Frame>
+            <TabView.Body />
+          </TabView.Frame>
+        </TabView>
+      </div>
     </div>
   );
 }

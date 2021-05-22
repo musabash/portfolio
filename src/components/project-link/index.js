@@ -1,9 +1,11 @@
 import React from 'react'
+import Readme from '../readme'
 
 export default function ProjectLink({image}) {
   return (
       <a href={image.link} className="portfolio__item">
-      <img src={image.ss} alt={image.alt} className="portfolio__img"/>
-      </a> 
+      <div style={{background: `url(${image.ss}) no-repeat`, backgroundSize: 'cover'}} className="portfolio__img">  
+      <Readme readme={image.readme}/></div>
+      </a>
   )
 }

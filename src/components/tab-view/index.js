@@ -1,12 +1,16 @@
-import React, { useState, useContext, createContext } from 'react'
+import React, { useState, useContext, createContext, useEffect } from 'react'
+import useWindowSize from "../../hooks/useWindowSize";
 
 const TabContext = createContext()
 
 export default function TabView({children, tabs, ...restProps}) {
-  const [tab, setTab] = useState(tabs[0].id)
+  const [tab, setTab] = useState(1)
+  const [sliderPos, setSliderPos] = useState(0)
+  const [target, setTarget] = useState(document.getElementsByName("Projects"))
+  
 
   return (
-    <TabContext.Provider value={{tab, tabs, setTab}}>
+    <TabContext.Provider value={{setTarget, tab, tabs, setTab, sliderPos, setSliderPos, target}}>
       <div className="container" {...restProps}>
           <div className="inner">{children}</div> 
       </div>
@@ -19,20 +23,25 @@ TabView.Frame = function TabViewFrame({children, ...restProps}) {
 }
 
 TabView.Tabs = function TabViewTabs({children, ...restProps}) {
-  const [sliderPos, setSliderPos] = useState(15)
+  const {sliderPos, target, setSliderPos} = useContext(TabContext)
+  const size = useWindowSize()
+
+  useEffect(() => {
+    let offset = target.offsetLeft || 36
+    offset !== sliderPos && setSliderPos(offset)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [size])
+        
   return (
     <div className="tabs-container">
-      <div onClick={(e) => {
-        setSliderPos(e.target.offsetLeft - 5)
-      } } className="tabs" {...restProps}>{children}
+      <div className="tabs" {...restProps}>{children}
       </div>
       <div className="slider-container">
-      <div 
-        className="slider" 
-        style={{transform: `translateX(${sliderPos}px)`}}
-      ></div>
-    </div>
-      
+        <div 
+          className="slider" 
+          style={{transform: `translateX(${sliderPos}px)`}}
+        ></div>
+      </div>      
     </div>
       
   )
@@ -44,12 +53,15 @@ TabView.Title = function TabViewTitle({children, ...restProps}) {
 }
 
 TabView.Tab = function TabViewTab({children, id, ...restProps}) {
-  const {tab, setTab, tabs} = useContext(TabContext)
+  const {tab, setTab, tabs, setSliderPos, setTarget} = useContext(TabContext)
+
   return (
-    <div id={id} className={tab === id ? 'tab active-tab' : 'tab'} onClick={() => {
+    <div id={id} className={tab === id ? 'tab active-tab' : 'tab'} onClick={(e) => {
       setTab(id)
+      setSliderPos(e.target.offsetLeft - 3)
+      setTarget(e.target)
     }} {...restProps}>
-      {tabs[id].name}
+      <h3>{tabs[id].name}</h3>
     </div>
   )
 }

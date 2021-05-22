@@ -4,7 +4,7 @@ export default function Contact() {
  
   return (
     <div className='tab-content'>
-      Contacts will be here.
+      <div className="deneme">Hello</div>
     </div>
   )
 }
