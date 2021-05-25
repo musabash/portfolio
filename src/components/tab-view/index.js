@@ -4,7 +4,7 @@ import useWindowSize from "../../hooks/useWindowSize";
 const TabContext = createContext()
 
 export default function TabView({children, tabs, ...restProps}) {
-  const [tab, setTab] = useState(1)
+  const [tab, setTab] = useState(0)
   const [sliderPos, setSliderPos] = useState(0)
   const [target, setTarget] = useState(document.getElementsByName("Projects"))
   
@@ -28,7 +28,7 @@ TabView.Tabs = function TabViewTabs({children, ...restProps}) {
 
   useEffect(() => {
     let offset = target.offsetLeft || 36
-    offset !== sliderPos && setSliderPos(offset)
+    offset !== sliderPos && setSliderPos(offset - 5)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [size])
         
@@ -58,7 +58,7 @@ TabView.Tab = function TabViewTab({children, id, ...restProps}) {
   return (
     <div id={id} className={tab === id ? 'tab active-tab' : 'tab'} onClick={(e) => {
       setTab(id)
-      setSliderPos(e.target.offsetLeft - 3)
+      setSliderPos(e.target.offsetLeft - 5)
       setTarget(e.target)
     }} {...restProps}>
       <h3>{tabs[id].name}</h3>

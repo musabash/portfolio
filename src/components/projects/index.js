@@ -85,8 +85,8 @@ export default function Projects() {
     <div className="tab-content">
       <section className="my-work">
         <div className="portfolio">
-          {projects.map(image => (
-            <ProjectLink key={image.id} image={image} />  
+          {projects.map(project => (
+            <ProjectLink key={project.id} project={project} />  
           ))}       
         </div>
       </section>

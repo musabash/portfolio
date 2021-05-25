@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Readme from '../readme'
 
-export default function ProjectLink({image}) {
+export default function ProjectLink({project}) {
+  const [show, setShow] = useState(false)
+  
   return (
-      <a href={image.link} className="portfolio__item">
-      <div style={{background: `url(${image.ss}) no-repeat`, backgroundSize: 'cover'}} className="portfolio__img">  
-      <Readme readme={image.readme}/></div>
+    <>
+      <a onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)} href={project.link} className="portfolio__item">
+        <div style={{background: `url(${project.ss}) no-repeat`, backgroundSize: 'cover'}} className="portfolio__img">  
+        </div>
       </a>
-  )
+      {show && <Readme readme={project.readme} />}
+    </>
+  )      
 }
