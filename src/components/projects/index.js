@@ -4,21 +4,15 @@ import { ProjectLink } from '..'
 const projects = [
   {
     id: 0,
-    ss: "/images/portfolio-04.jpg",
+    ss: "/images/blogXL.png",
     alt: "",
-    link: "",
+    link: "https://musabash.github.io/blogXL/",
+    github: "https://github.com/musabash/blogXL",
     readme: [
       "Blogging and publishing app",
       "React functional components and hooks",
-      "React Router",
-      "Firebase Authentication",
-      "Firebase Firestore (read, write, delete, edit)",
-      "Firebase Storage to upload user profile picture",
-      "Signup, Signin, Reset Password",
-      "Bookmark, like and comment on other blogs",
-      "Can edit but can't like own blog",
-      "Dashboard shows likes, bookmarks, blogs and drafts",
-      "Upload profile picture"
+      "React Router, Compound components",
+      "Firebase Authentication, Firestore,Firebase Storage"
 ]
   },
   {
@@ -26,23 +20,23 @@ const projects = [
     ss: "/images/currency-converter.jpeg",
     alt: "currency conversion web app",
     link: "https://musabash.github.io/currency-converter/",
+    github: "https://github.com/musabash/currency-converter",
     readme: [
-      "currency-converter web app",
+      "Currency converter web app",
       "React functional components and hooks",
-      "free.currencyconverterapi",
-      "user typed currency filtered from the currency list",
-      "allow no negative values"
+      "free.currencyconverterapi"
     ]
   },
   {
     id: 2,
     ss: "/images/my-list.png",
-    alt: "A kind of a todo list web app",
+    alt: "A bit more than a todo list app",
     link: "https://musabash.github.io/my-list/",
+    github: "https://github.com/musabash/my-list",
     readme: [
-      "This is a kind of todo web app",
-      "React functional components and hooks used",
-      "store, edit, delete lists stored in localStorage"
+      "A bit more than a todo list app",
+      "React functional components and hooks",
+      "Local storage"
     ]
   },
   {
@@ -50,12 +44,12 @@ const projects = [
     ss: "/images/movie-search.png",
     alt: "movie searh web app",
     link: "https://musabash.github.io/movie-search/",
+    github: "https://github.com/musabash/movie-search",
     readme: [
-      "movie-search web app",
-      "React Router",
-      "React Functional components and hooks",
+      "Movie searching web app",
+      "React Functional components and hooks, React Router",
       "The Movie Database (TMDB) API",
-      "Responsive design"
+      "Responsive"
     ]
   },
   {
@@ -63,12 +57,12 @@ const projects = [
     ss: "/images/my-notes.png",
     alt: "",
     link: "https://my-notess.netlify.app/",
+    github: "https://github.com/musabash/MyNotes",
     readme: [
-      "A simple not taking web app",
-      "Notes are stored in localStorage",
-      "Material UI used",
-      "React Router for routing",
-      "react-masonry-css for grid view"
+      "A note taking web app",
+      "React Functional components and hooks, React Router",
+      "Material UI, react-masonry-css, LocalStorage"
+      
     ]
   },
   {
@@ -76,6 +70,7 @@ const projects = [
     ss: "/images/portfolio-06.jpg",
     alt: "",
     link: "",
+    github: "",
     readme: []
   }
 ]
@@ -86,7 +81,7 @@ export default function Projects() {
       <section className="my-work">
         <div className="portfolio">
           {projects.map(project => (
-            <ProjectLink key={project.id} project={project} />  
+            <ProjectLink key={project.id} project={project}/>  
           ))}       
         </div>
       </section>

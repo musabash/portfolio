@@ -44,7 +44,9 @@ export default function ContactUs() {
         type="hidden"
         name="contact_number"  
       />
-      <label>Name</label>
+      <label>Name
+      
+      </label>
       <input
         required
         onChange={(e) => handleChange("name", e.target.value)}
@@ -74,7 +76,7 @@ export default function ContactUs() {
         <p className="sending">...sending</p> : 
         <input 
           type="submit"
-          value="Submit"
+          value="Send"
         />
       }
     </form>

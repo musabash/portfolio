@@ -15,7 +15,10 @@ export default function About() {
       </div>
       <p>I'm a self-taught front-end developer.</p>
       <p>I have a passion for what I do and will always be looking to learn and stay current with developments in relevant technologies.
-      </p>   
+      </p>
+      <p>Strong support professional with a Bachelor's degree focused in Physics from Marmara University.
+      </p>
+      <p>5+ years of experience in information technology and services industry</p>
     </div>
   )
 }
