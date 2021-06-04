@@ -1,11 +1,11 @@
 import Readme from '../readme'
 
-export default function ProjectLink({project}) {
+export default function ProjectLink({project, picture}) {
   
   return (
     <div className="portfolio__item-container">
       <a href={project.link} className="portfolio__item">
-        <img src={project.ss} alt={project.alt} className="portfolio__img"/>
+        <img src={picture} alt={project.alt} className="portfolio__img"/>
         <Readme readme={project.readme} />
       </a>
       <a href={project.link} className="goto" >Go to page</a>

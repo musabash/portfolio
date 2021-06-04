@@ -1,10 +1,11 @@
 import React from 'react'
 import { ProjectLink } from '..'
+import {blogXL, currencyConverter, movieSearch, myList, myNotes, portfolio} from '../../images'
 
+const pictures = [blogXL, currencyConverter, movieSearch, myList, myNotes, portfolio]
 const projects = [
   {
     id: 0,
-    ss: "/images/blogXL.png",
     alt: "",
     link: "https://musabash.github.io/blogXL/",
     github: "https://github.com/musabash/blogXL",
@@ -17,7 +18,6 @@ const projects = [
   },
   {
     id: 1,
-    ss: "/images/currency-converter.jpeg",
     alt: "currency conversion web app",
     link: "https://musabash.github.io/currency-converter/",
     github: "https://github.com/musabash/currency-converter",
@@ -29,7 +29,6 @@ const projects = [
   },
   {
     id: 2,
-    ss: "/images/my-list.png",
     alt: "A bit more than a todo list app",
     link: "https://musabash.github.io/my-list/",
     github: "https://github.com/musabash/my-list",
@@ -41,7 +40,6 @@ const projects = [
   },
   {
     id: 3,
-    ss: "/images/movie-search.png",
     alt: "movie searh web app",
     link: "https://musabash.github.io/movie-search/",
     github: "https://github.com/musabash/movie-search",
@@ -54,7 +52,6 @@ const projects = [
   },
   {
     id: 4,
-    ss: "/images/my-notes.png",
     alt: "",
     link: "https://my-notess.netlify.app/",
     github: "https://github.com/musabash/MyNotes",
@@ -67,7 +64,6 @@ const projects = [
   },
   {
     id: 5,
-    ss: "/images/portfolio-06.jpg",
     alt: "",
     link: "",
     github: "",
@@ -81,7 +77,7 @@ export default function Projects() {
       <section className="my-work">
         <div className="portfolio">
           {projects.map(project => (
-            <ProjectLink key={project.id} project={project}/>  
+            <ProjectLink key={project.id} project={project} picture={pictures[project.id]}/>  
           ))}       
         </div>
       </section>
