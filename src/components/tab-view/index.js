@@ -19,7 +19,7 @@ export default function TabView({children, tabs, ...restProps}) {
 }
 
 TabView.Frame = function TabViewFrame({children, ...restProps}) {
-  return <section className="dashboard__frame" {...restProps}>{children}</section>
+  return <section className="tab__frame" {...restProps}>{children}</section>
 }
 
 TabView.Tabs = function TabViewTabs({children, ...restProps}) {

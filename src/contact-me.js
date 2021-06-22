@@ -1,84 +1,78 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { env } from './config';
-import{ sendForm} from 'emailjs-com';
+import{ send } from 'emailjs-com';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
+ 
+ const Schema = Yup.object().shape({
+   user_name: Yup.string()
+     .min(2, 'Too Short!')
+     .max(50, 'Too Long!')
+     .required('Required'),
+   message: Yup.string()
+     .min(20, 'Too Short!')
+     .required('Required'),
+   user_email: Yup.string().email('Invalid email').required('Required'),
+   rate: Yup.string().matches('good').required()
+ });
+
 
 export default function ContactUs() {
-  const [submitButtonText, setSubmitButtonText] = useState("Send")
-  const [template, setTemplate] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-  
-  function sendEmail(e) {
-    e.preventDefault();
-    setSubmitButtonText("...sending")
-    sendForm(env.serviceId, env.templateId, e.target, env.user)
+
+  function sendEmail(values, setSubmitting, reset) {
+    send(env.serviceId, env.templateId, values, env.user)
       .then((result) => {
           console.log(result.text);
-          setSubmitButtonText("Send")
+          if (result.text === 'OK') {
+            setSubmitting(false)
+            reset()
+          } 
       }, (error) => {
-          console.log(error.text);
-      })
-      .then(() => setTemplate(
-              {
-          name: '',
-          email: '',
-          message: ''
-        }
-      ))
-  }
-
-  function handleChange(name, value) {
-    setTemplate(prev => ({
-      ...prev,
-      [name]: value
-    }))
+          return error.text
+      });
   }
 
   return (
-    <form
-      className="contact-form"
-      onSubmit={sendEmail}>
-      <input
-        type="hidden"
-        name="contact_number"  
-      />
-      <label>Name
-      
-      </label>
-      <input
-        required
-        onChange={(e) => handleChange("name", e.target.value)}
-        type="text"
-        name="user_name"
-        value={template.name}
-      />
-      <label>Email</label>
-      <input
-        required
-        onChange={(e) => handleChange("email", e.target.value)}
-        type="email"
-        name="user_email"
-        value={template.email}
-      />
-      <label>Message<span> ({240 - template.message.length}chars)</span></label>
-      <textarea
-        maxLength="240"
-        className={template.message.length > 220 && "input-warn"}
-        required
-        onChange={(e) => handleChange("message", e.target.value)}
-        name="message"
-        value={template.message}
-      />
-      {
-        submitButtonText === "...sending" ?
-        <p className="sending">...sending</p> : 
-        <input 
-          type="submit"
-          value="Send"
-        />
-      }
-    </form>
+    <Formik
+      initialValues={{
+        user_name: '',
+        user_email: '',
+        message: '',
+        rate: ''
+      }}
+      validationSchema={Schema}
+      onSubmit={(values, actions) => {
+        sendEmail(values, actions.setSubmitting, actions.resetForm)
+      }}>
+
+      {({ isSubmitting, values, errors, touched }) => (
+        <div className="form__container">
+          <Form className="contact__form">
+            <Field type="hidden" name="contact_number"/>
+            <label className="formik__label" htmlFor="user_name">Name <span>{errors.user_name && touched.user_name ? errors.user_name : null}</span></label>
+            <Field className="formik__input" name="user_name" placeholder="John" />
+            
+
+            <label className="formik__label" htmlFor="user_email">Email<span> {errors.user_email && touched.user_email ? errors.user_email : null}</span></label>
+            <Field className="formik__input" name="user_email" placeholder="john@example.com" type="email" />
+
+            <label className="formik__label" htmlFor="message">Message<span> ({240 - values.message.length}chars) {errors.message && touched.message ? errors.message : null}</span></label>
+            <Field 
+              maxLength="240"
+              className={values.message.length > 220 ?
+                "input-warn" :
+                "formik__input"}
+              name="message"
+              as="textarea"
+            />
+
+            <button className="submit" type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "sending..." : "Send Message"}
+            </button>
+          </Form>
+        </div>
+        
+      )}
+    </Formik>
   );
 }

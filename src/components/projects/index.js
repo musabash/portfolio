@@ -1,8 +1,8 @@
 import React from 'react'
 import { ProjectLink } from '..'
-import {blogXL, currencyConverter, movieSearch, myList, myNotes, portfolio} from '../../images'
+import {blogXL, currencyConverter, myList, movieSearch, myNotes, portfolio} from '../../images'
 
-const pictures = [blogXL, currencyConverter, movieSearch, myList, myNotes, portfolio]
+const pictures = [blogXL, currencyConverter, myList, movieSearch, myNotes, portfolio]
 const projects = [
   {
     id: 0,
@@ -18,7 +18,7 @@ const projects = [
   },
   {
     id: 1,
-    alt: "currency conversion web app",
+    alt: "currency conversion web page picture",
     link: "https://musabash.github.io/currency-converter/",
     github: "https://github.com/musabash/currency-converter",
     readme: [
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     id: 2,
-    alt: "A bit more than a todo list app",
+    alt: "My list web page picture",
     link: "https://musabash.github.io/my-list/",
     github: "https://github.com/musabash/my-list",
     readme: [
@@ -40,7 +40,7 @@ const projects = [
   },
   {
     id: 3,
-    alt: "movie searh web app",
+    alt: "movie searh web page picture",
     link: "https://musabash.github.io/movie-search/",
     github: "https://github.com/musabash/movie-search",
     readme: [
@@ -52,7 +52,7 @@ const projects = [
   },
   {
     id: 4,
-    alt: "",
+    alt: "my notes app web page picture",
     link: "https://my-notess.netlify.app/",
     github: "https://github.com/musabash/MyNotes",
     readme: [
