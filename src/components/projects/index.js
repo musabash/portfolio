@@ -1,8 +1,8 @@
 import React from 'react'
 import { ProjectLink } from '..'
-import {blogXL, currencyConverter, myList, movieSearch, myNotes, portfolio} from '../../images'
+import {blogXL, currencyConverter, myList, movieSearch, myNotes, taxi} from '../../images'
 
-const pictures = [blogXL, currencyConverter, myList, movieSearch, myNotes, portfolio]
+const pictures = [blogXL, currencyConverter, myList, movieSearch, myNotes, taxi]
 const projects = [
   {
     id: 0,
@@ -13,7 +13,7 @@ const projects = [
       "Blogging and publishing app",
       "React functional components and hooks",
       "React Router, Compound components",
-      "Firebase Authentication, Firestore,Firebase Storage"
+      "Firebase Authentication, Firestore, Firebase Storage"
 ]
   },
   {
@@ -64,10 +64,14 @@ const projects = [
   },
   {
     id: 5,
-    alt: "",
-    link: "",
-    github: "",
-    readme: []
+    alt: "taxi fare estimator app",
+    link: "https://musabash.github.io/taxi-fare-estimator/",
+    github: "https://github.com/musabash/taxi-fare-estimator",
+    readme: [
+      "An imaginary taxi fare calculator",
+      "Responsive",
+      "Html, CSS an Javascript"
+    ]
   }
 ]
 

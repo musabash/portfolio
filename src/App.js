@@ -24,7 +24,6 @@ function App() {
     <div className="app">
       <div className="app-container">
         <About />
-        <img src="antalya.jpg" alt="" className="portfolio_item"/>
         <TabView tabs={tabs}>
           <TabView.Tabs>
             {tabs.map(elm => <TabView.Tab key={elm.id} id={elm.id} name={elm.name}/>)}
