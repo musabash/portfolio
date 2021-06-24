@@ -14,11 +14,10 @@ export default function About() {
         </div>
       </div>
       <p>I'm a self-taught front-end developer.</p>
-      <p>I have a passion for what I do and will always be looking to learn and stay current with developments in relevant technologies.
+      <p>I love building web apps and sites with <span>React JS</span>.</p>
+      <p>I have a passion for coding. I always try to look to learn and stay current with developments in relevant technologies.
       </p>
-      <p>Strong support professional with a Bachelor's degree focused in Physics from Marmara University.
-      </p>
-      <p>5+ years of experience in information technology and services industry</p>
+      <p>I've built a strong professional background with a Bachelor's degree focused in Physics from Marmara University but my passion for coding made me chose this new career path. 5+ years of experience in <span>IT & services industry</span> is helping me a lot to adapt quickly to new technologies and to solidify my knowledge.</p>
     </div>
   )
 }

@@ -28,7 +28,7 @@ html {
   --primary-color: #c9c9fd;
   --secondary-color: #f8d808;
   --animation-duration: 2000ms;
-  --numberof-cards: 10;
+  --numberof-cards: 11;
 }
 
 .app {
@@ -70,6 +70,15 @@ html {
   margin: 2em;
   padding: 1em;
   font-size: 1.2em;
+  text-align: center;
+}
+
+.about p {
+  margin-bottom: 0.5em;
+}
+
+.about span {
+  color: var(--secondary-color)
 }
 .about_header {
   display: flex;
@@ -172,6 +181,24 @@ html {
   display: flex;
 }
 
+table {
+  flex-basis: 40%;
+  margin-top: 1em;
+}
+.table td{
+  background: rgba(192, 172, 172, 0.2);
+  border-radius: 5px;
+  text-align: left;
+  padding: 0.2em 0.3em;
+  margin: 0.1em;
+}
+
+.table tr td:first-of-type {
+  text-align: right;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
 .fav-icons {
   position: absolute;
   left: 3.5em;
@@ -208,6 +235,9 @@ html {
 }
 .fav-icons[name=j] {
   animation-delay: calc(var(--animation-duration) * -9);
+}
+.fav-icons[name=k] {
+  animation-delay: calc(var(--animation-duration) * -10);
 }
 @keyframes carousel {
   from { transform: rotateY(0deg) translateX(-120px); }

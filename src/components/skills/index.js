@@ -1,16 +1,18 @@
 import React from 'react'
 import {FaJsSquare, FaHtml5, FaCss3Alt, FaGithubSquare, FaGit, FaReact} from "react-icons/fa"
-import {SiFirebase, SiMaterialUi, SiStyledComponents, SiAmazonaws} from "react-icons/si"
+import {SiFirebase, SiMaterialUi, SiStyledComponents, SiAmazonaws, SiReactrouter} from "react-icons/si"
 import { skills } from './skills'
+import Table from './table'
 
 export default function Skills() {
   return (
     <div className="skills">
-      <ul className="skills__list">
+      <Table />
+      {/* <ul className="skills__list">
         {skills.map((skill) => (
           <li key={skill}>{skill}</li>
         ))}
-      </ul>
+      </ul> */}
       <div className='tab-content animation'>
         <div className="floor"></div>
         <div className="cards">
@@ -24,6 +26,7 @@ export default function Skills() {
           <SiMaterialUi name="h" className="fav-icons" style={{color:"blue"}}/>
           <SiStyledComponents name="i" className="fav-icons" style={{color:"violet"}}/>
           <SiAmazonaws name="j" className="fav-icons" style={{color:"orange"}}/>
+          <SiReactrouter name="k" className="fav-icons" style={{color:"brown"}}/>
         </div>
       </div>
     </div>
