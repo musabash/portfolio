@@ -13,9 +13,7 @@ import * as Yup from 'yup';
      .min(20, 'Too Short!')
      .required('Required'),
    user_email: Yup.string().email('Invalid email').required('Required'),
-   rate: Yup.string().matches('good').required()
  });
-
 
 export default function ContactUs() {
 
@@ -38,7 +36,6 @@ export default function ContactUs() {
         user_name: '',
         user_email: '',
         message: '',
-        rate: ''
       }}
       validationSchema={Schema}
       onSubmit={(values, actions) => {
