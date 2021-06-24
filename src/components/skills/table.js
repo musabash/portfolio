@@ -14,7 +14,7 @@ const skillsTable = [["Main Languages",	"Javascript, HTML, CSS"],
       <table>
         <tbody >
         {skillsTable.map((elm) => (
-          <tr >
+          <tr key={elm[0]} >
             <td>{elm[0]}</td>
             <td>{elm[1]}</td>
           </tr>
