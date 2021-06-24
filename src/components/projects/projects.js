@@ -1,6 +1,7 @@
 export const projects = [
   {
     id: 0,
+    name: "BLOG XL",
     alt: "",
     link: "https://musabash.github.io/blogXL/",
     github: "https://github.com/musabash/blogXL",
@@ -13,6 +14,7 @@ export const projects = [
   },
   {
     id: 1,
+    name: "CURRENCY CONVERTER",
     alt: "currency conversion web page picture",
     link: "https://musabash.github.io/currency-converter/",
     github: "https://github.com/musabash/currency-converter",
@@ -24,6 +26,7 @@ export const projects = [
   },
   {
     id: 2,
+    name: "MY LIST",
     alt: "My list web page picture",
     link: "https://musabash.github.io/my-list/",
     github: "https://github.com/musabash/my-list",
@@ -35,6 +38,7 @@ export const projects = [
   },
   {
     id: 3,
+    name: "MOVIE SEARCH",
     alt: "movie searh web page picture",
     link: "https://musabash.github.io/movie-search/",
     github: "https://github.com/musabash/movie-search",
@@ -47,6 +51,7 @@ export const projects = [
   },
   {
     id: 4,
+    name: "MY NOTES",
     alt: "my notes app web page picture",
     link: "https://my-notess.netlify.app/",
     github: "https://github.com/musabash/MyNotes",
@@ -59,6 +64,7 @@ export const projects = [
   },
   {
     id: 5,
+    name: "FARE CALCULATOR",
     alt: "taxi fare estimator app",
     link: "https://musabash.github.io/taxi-fare-estimator/",
     github: "https://github.com/musabash/taxi-fare-estimator",
