@@ -20,7 +20,6 @@ html {
 }
 
 :root {
-  --scale: 0;
   --paddin: 0;
   --tab-width: 6em;
   --slider: 2em;
@@ -28,6 +27,7 @@ html {
   --background: rgba(37, 37, 70, 0.9);
   --primary-color: #c9c9fd;
   --secondary-color: #f8d808;
+  --animation-duration: 2000ms;
 }
 
 .app {
@@ -39,6 +39,7 @@ html {
 .app-container {
   width: 100%;
   height: 100%;
+  border: 1px solid transparent; /* to fix the gap at the top and bottom */
   background: var(--background);
 }
 
@@ -166,16 +167,87 @@ html {
   transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
 }
 
+.skills {
+  display: flex;
+}
+
 .fav-icons {
+  position: absolute;
+  left: 3.5em;
+  top: 1em;
   font-size: 2.5em;
   background: rgb(41, 40, 40);
-  margin: 0.1em;
-  padding: 0.05em;
+  padding: 0.1em;
+  animation: carousel calc(var(--animation-duration) * 10) linear infinite;
+}
+
+.fav-icons[name=b] {
+  animation-delay: calc(var(--animation-duration) * -1) ;
+}
+.fav-icons[name=c] {
+  animation-delay: calc(var(--animation-duration) * -2);
+}
+.fav-icons[name=d] {
+  animation-delay: calc(var(--animation-duration) * -3);
+}
+.fav-icons[name=e] {
+  animation-delay: calc(var(--animation-duration) * -4);
+}
+.fav-icons[name=f] {
+  animation-delay: calc(var(--animation-duration) * -5);
+}
+.fav-icons[name=g] {
+  animation-delay: calc(var(--animation-duration) * -6);
+}
+.fav-icons[name=h] {
+  animation-delay: calc(var(--animation-duration) * -7);
+}
+.fav-icons[name=i] {
+  animation-delay: calc(var(--animation-duration) * -8);
+}
+.fav-icons[name=j] {
+  animation-delay: calc(var(--animation-duration) * -9);
+}
+@keyframes carousel {
+  from { transform: rotateY(0deg) translateX(120px); }
+  to { transform: rotateY(-360deg) translateX(120px); }
 }
 
 .tab-content {
+  background-color: transparent;
   margin: 2em 1em;
 }
+
+.animation {
+  width:20em;
+  height: 5em;
+  transform: rotateX(30deg);
+  background-color: transparent;
+  margin: 2em 1em;
+  perspective: 20em;
+  perspective-origin: 50% calc(50% - 2em);
+}
+.cards {
+  transform: rotateX(-10deg);
+  transform-style: preserve-3d;
+}
+
+/* .floor {
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 1);
+  transform: rotateX(80deg);
+  transform-style: preserve-3d;
+} */
+
+@media(max-width: 800px) {
+  .skills {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+
 .tab__frame {
   margin: 1em auto;
 }
@@ -221,7 +293,6 @@ a {
 
 .portfolio__img:hover,
 .portfolio__item:focus {
-  --scale: 100%;
   --paddin: 3.5em;
   transform: scale(1.2);
 }
@@ -283,6 +354,9 @@ a {
   margin-right: 0.5em;
 }
 
+.skills__list {
+  margin: 1em 2em;
+}
 .form__container {
   display: flex;
   align-items: center;
@@ -326,12 +400,6 @@ a {
 label span {
   font-size: 0.8rem;
   color: red;
-}
-
-.radio__group {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
 .submit {
