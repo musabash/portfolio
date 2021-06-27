@@ -15,7 +15,8 @@ export default function Projects() {
                 id="myId"
                 display="initial"
                 className="portfolio__item"
-                position="relative"/>
+                position="relative"
+              />
     
               <a href={project.link} className="goto" >Go to page</a>
               <a href={project.github} className="goto">View code</a>
