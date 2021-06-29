@@ -71,7 +71,7 @@ export const projects = [
     readme: [
       "An imaginary taxi fare calculator",
       "Responsive",
-      "Html, CSS an Javascript"
+      "Html, CSS and Javascript"
     ]
   }
 ]

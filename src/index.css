@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   background: #2e2e4d;
   color: #fff;
@@ -258,13 +258,14 @@ table {
   width:20em;
   height: 5em;
   transform: rotateX(30deg);
-  margin: 2em 1em;
+  margin: 2em 2em;
   perspective: 20em;
   perspective-origin: 50% calc(50% - 2em);
 }
 .cards {
   transform: rotateX(-10deg);
   transform-style: preserve-3d;
+  margin-right: 2em;
 }
 
 /* .floor {
@@ -495,6 +496,16 @@ label span {
   color: red;
 }
 
+.disabled {
+  background: #fdfdfdb3;
+  cursor: not-allowed;
+  color: gray;
+}
+.disabled:hover {
+  background: #fdfdfdb3;
+  cursor: not-allowed;
+  color: gray;
+}
 @media (max-width: 560px) {
   .portfolio {
     grid-template-columns: 320px;

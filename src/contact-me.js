@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import { env } from './config';
 import{ send } from 'emailjs-com';
 import { Formik, Form, Field } from 'formik';
@@ -16,8 +16,6 @@ import * as Yup from 'yup';
  });
 
 export default function ContactUs() {
-  const [carretPos, setCarretPos] = useState()
-  const [rowNumber, setRowNumber] = useState()
 
   function sendEmail(values, setSubmitting, reset) {
     send(env.serviceId, env.templateId, values, env.user)
@@ -40,11 +38,11 @@ export default function ContactUs() {
         message: '',
       }}
       validationSchema={Schema}
-      onSubmit={(values, actions) => {
+      onSubmit={( values, actions) => {
         sendEmail(values, actions.setSubmitting, actions.resetForm)
       }}>
 
-      {({ isSubmitting, values, errors, touched }) => (
+      {({ dirty, isValid, isSubmitting, values, errors, touched }) => (
         <div className="form__container">
           <Form className="contact__form">
             <Field type="hidden" name="contact_number"/>
@@ -66,7 +64,7 @@ export default function ContactUs() {
               as="textarea"
             />
 
-            <button className="submit" type="submit" disabled={isSubmitting}>
+            <button className={!dirty || !isValid ? "submit disabled" : "submit"} type="submit" disabled={!dirty || !isValid || isSubmitting}>
               {isSubmitting ? "sending..." : "Send Message"}
             </button>
           </Form>
