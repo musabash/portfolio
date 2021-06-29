@@ -313,7 +313,7 @@ table {
   color: var(--secondary-color);
   font-size: 1.5rem;
 }
-.portfolio {
+.portfolio__iframe {
   margin-top: 2em;
   display: flex;
   flex-direction: column;
@@ -321,23 +321,44 @@ table {
   justify-content: center;
 }
 
-.portfolio__item {
+.portfolio {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  gap: 1em;
+}
+
+.portfolio__item__iframe {
   position: relative;
   background: white;
   font-size: 0.8rem;
   margin: 1em;
-  width: 85%;
+  width: 90vw;
   height: 100vh;
   overflow: auto;
+}
+
+.portfolio__item {
+  position: relative;
+  background: white;
+  font-size: 0.8rem;
+  overflow: hidden;
+  margin: 1em;
+  height: 21em;
+  width: 28em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .my-work {
   color: white;
   text-align: center;    
 }
-a {
-  text-decoration: none;
-}
+
 .portfolio__img {
   color: transparent;
   max-height: 100%;
@@ -350,7 +371,6 @@ a {
 .portfolio__img:hover,
 .portfolio__item:focus {
   --paddin: 3.5em;
-  transform: scale(1.2);
 }
 
 .portfolio__item:hover {
@@ -360,14 +380,20 @@ a {
 }
 
 .portfolio__item-container a:last-of-type {
-  margin-left: 1em;
+  margin: 0 1em;
 }
 .goto {
-  flex-basis: 50%;
-  padding: 0.2em 0.3em;
+  text-decoration: none;
+  cursor: pointer;
+  width: 6.9em;
+  font-size: 1rem;
+  padding: 0.3em 0.5em;
   background: var(--background);
   border-radius: 5px;
+  border: none;
   font-weight: 500;
+  transition: 
+    all 200ms cubic-bezier(.5, 0, .5, 1);
   color: var(--primary-color);
   box-shadow: 0 0 2px 1px inset rgb(105, 109, 160),
               0 0 3px 3px inset rgb(90, 85, 160);
@@ -375,7 +401,7 @@ a {
 
 .goto:hover {
   color: var(--secondary-color);
-  box-shadow: 0 0 2px 1px inset var(--secondary-color);
+  box-shadow: 0 0 3px 3px inset var(--secondary-color);
 }
 
 .readme {
@@ -468,6 +494,7 @@ label span {
   cursor: pointer;
   color: red;
 }
+
 @media (max-width: 560px) {
   .portfolio {
     grid-template-columns: 320px;

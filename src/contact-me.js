@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { env } from './config';
 import{ send } from 'emailjs-com';
 import { Formik, Form, Field } from 'formik';
@@ -16,6 +16,8 @@ import * as Yup from 'yup';
  });
 
 export default function ContactUs() {
+  const [carretPos, setCarretPos] = useState()
+  const [rowNumber, setRowNumber] = useState()
 
   function sendEmail(values, setSubmitting, reset) {
     send(env.serviceId, env.templateId, values, env.user)
@@ -56,6 +58,7 @@ export default function ContactUs() {
             <label className="formik__label" htmlFor="message">Message<span> ({240 - values.message.length}chars) {errors.message && touched.message ? errors.message : null}</span></label>
             <Field 
               maxLength="240"
+              style={{height: "15em"}}
               className={values.message.length > 220 ?
                 "input-warn" :
                 "formik__input"}
