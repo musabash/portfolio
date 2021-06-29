@@ -40,7 +40,7 @@ export const projects = [
     id: 3,
     name: "MOVIE SEARCH",
     alt: "movie searh web page picture",
-    link: "https://musabash.github.io/movie-search/",
+    link: "https://movie-search-musabas.netlify.app/",
     github: "https://github.com/musabash/movie-search",
     readme: [
       "Movie searching web app",
