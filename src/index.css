@@ -343,6 +343,7 @@ table {
 
 .portfolio__item {
   position: relative;
+  cursor: pointer;
   background: white;
   font-size: 0.8rem;
   overflow: hidden;
