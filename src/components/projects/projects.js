@@ -58,8 +58,7 @@ export const projects = [
     readme: [
       "A note taking web app",
       "React Functional components and hooks, React Router",
-      "Material UI, react-masonry-css, LocalStorage"
-      
+      "Material UI, react-masonry-css, LocalStorage" 
     ]
   },
   {
