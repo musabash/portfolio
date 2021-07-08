@@ -10,7 +10,7 @@ export default function About() {
           <a href="https://github.com/musabash"><FaGithub /></a>
           <a href="https://www.linkedin.com/in/musa-bas-4984221bb/"><FaLinkedin /></a>
           <a href="https://twitter.com/musabas_"><FaTwitter /></a>
-          <a href="mailto:devmusabas@gmail.com"><FaEnvelope /></a>
+          <a href="mailto:musa.bas@musabas.com"><FaEnvelope /></a>
         </div>
       </div>
       <p>I'm a self-taught front-end developer.</p>
