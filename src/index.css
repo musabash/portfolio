@@ -29,6 +29,7 @@ html {
   --secondary-color: #f8d808;
   --animation-duration: 2000ms;
   --numberof-cards: 11;
+  --translate-icons: -7.5rem;
 }
 
 .app {
@@ -69,7 +70,7 @@ html {
 .about {
   margin: 2em;
   padding: 1em;
-  font-size: 1.2em;
+  font-size: 1.1em;
   text-align: center;
 }
 
@@ -182,7 +183,7 @@ html {
 }
 
 table {
-  flex-basis: 40%;
+  flex-basis: 50%;
   margin-top: 1em;
 }
 .table td{
@@ -240,8 +241,8 @@ table {
   animation-delay: calc(var(--animation-duration) * -10);
 }
 @keyframes carousel {
-  from { transform: rotateY(0deg) translateX(-120px); }
-  to { transform: rotateY(-360deg) translateX(-120px); }
+  from { transform: rotateY(0deg) translateX(var(--translate-icons)); }
+  to { transform: rotateY(-360deg) translateX(var(--translate-icons)); }
 }
 
 /* @keyframes rotate {
@@ -257,8 +258,10 @@ table {
 .animation {
   width:20em;
   height: 5em;
+  flex-basis: 50%;
   transform: rotateX(30deg);
-  margin: 2em 2em;
+  margin: 2em auto;
+  margin-right: 7em;
   perspective: 20em;
   perspective-origin: 50% calc(50% - 2em);
 }
@@ -304,6 +307,19 @@ table {
   .skills {
     flex-direction: column-reverse;
     align-items: center;
+  }
+
+  .table {
+    margin-top: 9em;
+  }
+  .animation {
+    margin: 1em auto;
+  }
+}
+
+@media(max-width: 400px) {
+  .animation {
+    --translate-icons: 3rem;
   }
 }
 
