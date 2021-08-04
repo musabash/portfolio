@@ -3,7 +3,7 @@ export const projects = [
     id: 0,
     name: "BLOG XL",
     alt: "",
-    link: "https://alternate.d303vueblqnfbj.amplifyapp.com/ProfilePage",
+    link: "https://main.d303vueblqnfbj.amplifyapp.com/",
     github: "https://github.com/musabash/blogXL",
     readme: [
       "Blogging and publishing app",
