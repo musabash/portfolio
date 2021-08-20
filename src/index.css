@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   background: #2e2e4d;
   color: #fff;
@@ -29,7 +29,8 @@ html {
   --secondary-color: #f8d808;
   --animation-duration: 2000ms;
   --numberof-cards: 11;
-  --translate-icons: -7.5rem;
+  --translate-icons: -5rem;
+  --flip-icons: scaleX(1) translateX(0%);
 }
 
 .app {
@@ -200,6 +201,10 @@ table {
   color: var(--secondary-color);
 }
 
+svg path {
+  transform: var(--flip-icons);
+}
+
 .fav-icons {
   position: absolute;
   left: 3.5em;
@@ -241,14 +246,10 @@ table {
   animation-delay: calc(var(--animation-duration) * -10);
 }
 @keyframes carousel {
-  from { transform: rotateY(0deg) translateX(var(--translate-icons)); }
-  to { transform: rotateY(-360deg) translateX(var(--translate-icons)); }
+  0% { transform: rotateY(0deg) translateX(var(--translate-icons)); }
+  50% {--flip-icons: scaleX(-1) translateX(-100%)}
+  100% { transform: rotateY(-360deg) translateX(var(--translate-icons)); }
 }
-
-/* @keyframes rotate {
-  from { transform: rotateZ(0deg)}
-  to { transform: rotateZ(360deg)}
-} */
 
 .tab-content {
   background-color: transparent;
