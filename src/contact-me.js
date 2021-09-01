@@ -58,7 +58,7 @@ export default function ContactUs() {
               maxLength="240"
               style={{height: "15em"}}
               className={values.message.length > 220 ?
-                "input-warn" :
+                "input-warn formik__input" :
                 "formik__input"}
               name="message"
               as="textarea"
