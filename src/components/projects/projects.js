@@ -1,29 +1,29 @@
 export const projects = [
-  {
-    id: 0,
-    name: "BLOG XL",
-    alt: "",
-    link: "https://alternate.d303vueblqnfbj.amplifyapp.com/ProfilePage",
-    github: "https://github.com/musabash/blogXL",
-    readme: [
-      "Blogging and publishing app",
-      "React functional components and hooks",
-      "React Router, Compound components",
-      "Firebase Authentication, Firestore, Firebase Storage"
-]
-  },
-  {
-    id: 1,
-    name: "CURRENCY CONVERTER",
-    alt: "currency conversion web page picture",
-    link: "https://musabash.github.io/currency-converter/",
-    github: "https://github.com/musabash/currency-converter",
-    readme: [
-      "Currency converter web app",
-      "React functional components and hooks",
-      "free.currencyconverterapi"
-    ]
-  },
+//   {
+//     id: 0,
+//     name: "BLOG XL",
+//     alt: "",
+//     link: "https://alternate.d303vueblqnfbj.amplifyapp.com/ProfilePage",
+//     github: "https://github.com/musabash/blogXL",
+//     readme: [
+//       "Blogging and publishing app",
+//       "React functional components and hooks",
+//       "React Router, Compound components",
+//       "Firebase Authentication, Firestore, Firebase Storage"
+// ]
+//   },
+//   {
+//     id: 1,
+//     name: "CURRENCY CONVERTER",
+//     alt: "currency conversion web page picture",
+//     link: "https://musabash.github.io/currency-converter/",
+//     github: "https://github.com/musabash/currency-converter",
+//     readme: [
+//       "Currency converter web app",
+//       "React functional components and hooks",
+//       "free.currencyconverterapi"
+//     ]
+//   },
   {
     id: 2,
     name: "MY LIST",
