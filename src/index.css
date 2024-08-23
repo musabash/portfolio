@@ -91,7 +91,10 @@ html {
 }
 
 .about {
-  margin: 2em;
+  margin: 5em 2em 2em;
+  display: flex;
+  gap: 0.5em;
+  flex-direction: column;
   padding: 1em;
   font-size: 1.1em;
   color: black;
