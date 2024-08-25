@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "https://musabash.github.io/portfolio/",
+  "homepage": "https://musabas.netlify.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "emailjs": "^1.0.11",
     "emailjs-com": "^2.6.4",
     "formik": "^2.2.9",
+    "portfolio": "file:",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
