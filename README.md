@@ -61,6 +61,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - **Email**: musabas@example.com
 - **LinkedIn**: [linkedin.com/in/musabas](https://www.linkedin.com/in/musabas)
-- **Website**: [musabas.com](https://www.musabas.com)
+- **Website**: [musabas.com](http://musabas.com)
 
 Thank you for visiting my portfolio repository!
