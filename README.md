@@ -59,7 +59,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-- **Email**: musabas@example.com
+- **Email**: musa.bas@musabas.com
 - **LinkedIn**: [linkedin.com/in/musabas](https://www.linkedin.com/in/musabas)
 - **Website**: [musabas.com](http://musabas.com)
 
